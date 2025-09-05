@@ -1817,17 +1817,7 @@ footer {
 
 /* Mobile */
 @media (max-width: 768px) {
-    /* fullpage.js override */
-    .fp-section, .fp-slide, .fp-tableCell {
-        height: auto !important;
-    }
-    html, body {
-        overflow: auto !important;
-        height: auto !important;
-    }
-    #fp-nav, .fp-slidesNav {
-        display: none !important;
-    }
+    
 
     header { height: 60px; }
     header .header-inner { height: 60px; padding: 0 20px; }
