@@ -290,45 +290,7 @@ $(function() {
 <link rel="stylesheet" href="ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css">
 <script src="ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
 
-<!-- 메인 유튜브 Pop 하단에 src로 youtube 지정-->
-<div id="light1" class="white_content">
-    <a href="#" onclick="javascript:close_movie1(); "><div id="fade" class="black_overlay22"></div> </a>
-    <a href="#" onclick="javascript:close_movie1(); "><div id="movie-close"><img src="images/close5.png?ver=1"></div></a>
-    <div id="player3">
-        <div class="iframe-wrap">
-            <iframe src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
-        </div>
-    </div>			
-</div>
-
-<script>
-    function close_movie1(){
-        $('#light1').html("");
-        document.getElementById('light1').style.display='none';
-        document.getElementById('fade').style.display='none';
-        $('#light1').removeClass('active');
-    }
-    embed=$('#light1').html();
-    $('#btn').click(function(){
-    status=$(this).text()
-    if(status=='닫기'){$('#light1').html(''); $(this).text('열기');}
-    else{$('#light1').html(embed); $(this).text('닫기'); }
-    });
-    let introVideoCalled = false;
-        
-    function introVideo() {
-        if (introVideoCalled) return;
-        introVideoCalled = true;
-        setTimeout(() => {
-            $('#light1').addClass('active');
-            $('#light1 iframe').attr('src',
-            'https://www.youtube.com/embed/BsspmRhOzv8?si=EAlZoDbNspYZDBJu&mute=1&autoplay=1'
-            );
-        }, 50); 
-    }   
-    introVideo();
-</script>
-<!-- END 메인 유튜브 Pop -->
+<!-- 유튜브 팝업 삭제됨 -->
 
 <!-- quick -->
 <div id="quick_menu" class="active">
