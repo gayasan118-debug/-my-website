@@ -134,8 +134,10 @@ var g5_cookie_domain = "";
                     <span>1688-0458</span>
                 </a>
 			</div>
+            <a href="javascript:;" class="mobile-menu-btn"><span></span><span></span><span></span></a>
 		</div>
 	</header>
+<div class="mobile-gnb"></div>
 
 
 <link rel="stylesheet" href="ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css">
@@ -1031,5 +1033,25 @@ var g5_cookie_domain = "";
 
 
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Clone the desktop GNB for the mobile menu
+    const desktopGnb = document.querySelector('.gnb');
+    const mobileGnbContainer = document.querySelector('.mobile-gnb');
+    if (desktopGnb && mobileGnbContainer) {
+        const mobileGnb = desktopGnb.cloneNode(true);
+        mobileGnbContainer.appendChild(mobileGnb);
+    }
+
+    // Hamburger menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    if (mobileMenuBtn && mobileGnbContainer) {
+        mobileMenuBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileGnbContainer.classList.toggle('active');
+        });
+    }
+});
+</script>
 </body>
 </html>
