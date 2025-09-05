@@ -1036,23 +1036,25 @@ var g5_cookie_domain = "";
 
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Clone the desktop GNB for the mobile menu
-    const desktopGnb = document.querySelector('.gnb');
-    const mobileGnbContainer = document.querySelector('.mobile-gnb');
-    if (desktopGnb && mobileGnbContainer) {
-        const mobileGnb = desktopGnb.cloneNode(true);
-        mobileGnbContainer.appendChild(mobileGnb);
+$(document).ready(function(){
+    // Clone menu only if it hasn't been cloned yet
+    if ($('.mobile-gnb .gnb').length < 1) {
+        var clonedMenu = $('.gnb').clone();
+        $('.mobile-gnb').append(clonedMenu);
     }
 
-    // Hamburger menu toggle
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    if (mobileMenuBtn && mobileGnbContainer) {
-        mobileMenuBtn.addEventListener('click', function() {
-            this.classList.toggle('active');
-            mobileGnbContainer.classList.toggle('active');
-        });
-    }
+    // Toggle menu
+    $('.mobile-menu-btn').on('click', function(e){
+        e.preventDefault();
+        $(this).toggleClass('active');
+        $('.mobile-gnb').toggleClass('active');
+    });
+
+    // Close menu when a link is clicked
+    $('.mobile-gnb').on('click', 'a', function() {
+        $('.mobile-menu-btn').removeClass('active');
+        $('.mobile-gnb').removeClass('active');
+    });
 });
 </script>
 </body>
